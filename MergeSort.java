@@ -68,10 +68,6 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSorting<T> {
       }
    }
    
-   public static void main(String[] args) {
-	MergeSort teste = new MergeSort();
-	Integer[] test = new Integer[] {0,0,0,0,0,2};
-	teste.sort(test, 0, 1);
-}
+
 
 }
