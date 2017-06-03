@@ -1,7 +1,5 @@
-package vector;
-
-
-import sorting.AbstractSorting;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Classe que implementa do Counting Sort vista em sala. Desta vez este
@@ -9,9 +7,8 @@ import sorting.AbstractSorting;
  * possivel para o array de contadores (C) - Ser capaz de ordenar arrays
  * contendo numeros negativos
  */
-public class ExtendedCountingSort extends AbstractSorting<Integer> {
+public class ExtendedCountingSort {
 
-   @Override
    public void sort(Integer[] array, int leftIndex, int rightIndex) {
       if (array == null || leftIndex < 0 || leftIndex >= rightIndex || rightIndex >= array.length || array.length <= 1) {
          return;
@@ -87,5 +84,18 @@ public class ExtendedCountingSort extends AbstractSorting<Integer> {
 
       return new int[] { indexMinElement, indexMaxElement };
    }
+public static void main(String[] args) {
+        long start = System.nanoTime();
+        ExtendedCountingSort inst = new ExtendedCountingSort();
+        int num = Integer.parseInt(args[0]);
+        Integer[] arr = new Integer[num];
+        Random rand = new Random();
+        for (int i = 0; i < num; i++) {
+              arr[i] = rand.nextInt()/1000000;
+        }
 
+        inst.sort(arr, 0, num-1);
+
+        System.out.println((System.nanoTime()-start)/1000000000.0);
+   }
 }
